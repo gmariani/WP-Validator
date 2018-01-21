@@ -1,0 +1,21 @@
+{
+  "name": "WordPress-Validator",
+  "version": "1.0.1",
+  "description": "Downloads clean copies of a WordPress site for comparison",
+  "main": "main.js",
+  "dependencies": {
+    "electron-prebuilt": "^1.4.12",
+    "unzip": "^0.1.11"
+  },
+  "devDependencies": {
+	"electron-packager": "^8.4.0"
+  },
+  "scripts": {
+    "start": "electron ./main.js",
+	"package-mac":    "electron-packager . WordPressValidator --overwrite --platform=darwin --arch=x64  --ignore=dist --prune=true --version=1.4.12 --out=dist",
+	"package-win":    "electron-packager . WordPressValidator --overwrite --platform=win32  --arch=ia32 --ignore=dist --prune=true --version=1.4.12 --out=dist",
+	"package-linux" : "electron-packager . WordPressValidator --overwrite --platform=linux  --arch=x64  --ignore=dist --prune=true --version=1.4.12 --out=dist"
+  },
+  "author": "Gabriel Mariani",
+  "license": "ISC"
+}
